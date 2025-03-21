@@ -42,6 +42,12 @@ document.getElementById('arButton').addEventListener('click', async () => {
 
             // ✅ Now allow touch interaction inside AR session
             renderer.domElement.style.pointerEvents = 'auto';
+            document.getElementById('arButton').style.display = 'none';
+
+            // ✅attach gesture handlers
+            renderer.domElement.addEventListener('touchstart', onTouchStart, false);
+            renderer.domElement.addEventListener('touchmove', onTouchMove, false);
+
 
             console.log('✅ AR Session started!');
         } else {
@@ -179,33 +185,31 @@ function onSelect() {
 let touchStartX, touchStartY, initialRotation;
 const dragFactor = 0.005; // Adjusts drag speed
 
-document.addEventListener('touchstart', (event) => {
+function onTouchStart(event) {
     if (!placedObject) return;
 
     if (event.touches.length === 1) {
-        // Start tracking single-finger drag
         touchStartX = event.touches[0].clientX;
         touchStartY = event.touches[0].clientY;
     } else if (event.touches.length === 2) {
-        // Start tracking rotation
         initialRotation = placedObject.rotation.y;
     }
-}, false);
 
-document.addEventListener('touchmove', (event) => {
+    console.log("👆 touchstart", event.touches.length);
+}
+
+
+function onTouchMove(event) {
     if (!placedObject) return;
 
-    // Get camera forward direction
     const cameraDirection = new THREE.Vector3();
     camera.getWorldDirection(cameraDirection);
-    cameraDirection.y = 0; // Ignore vertical tilt
+    cameraDirection.y = 0;
 
     if (event.touches.length === 1) {
-        // 🎯 Fixed Dragging (Move Forward & Backward)
         const deltaX = (event.touches[0].clientX - touchStartX) * dragFactor;
         const deltaY = (event.touches[0].clientY - touchStartY) * dragFactor;
 
-        // Move along the world XZ plane in the direction of the camera's view
         placedObject.position.addScaledVector(cameraDirection, -deltaY);
         placedObject.position.x += deltaX * Math.cos(camera.rotation.y);
         placedObject.position.z += deltaX * Math.sin(camera.rotation.y);
@@ -214,23 +218,15 @@ document.addEventListener('touchmove', (event) => {
         touchStartY = event.touches[0].clientY;
     }
     else if (event.touches.length === 2) {
-        // 🎯 Fixed Rotation Calculation
         const angle = Math.atan2(
             event.touches[1].clientY - event.touches[0].clientY,
             event.touches[1].clientX - event.touches[0].clientX
         );
-        placedObject.rotation.y = initialRotation - angle; // Corrected rotation
+        placedObject.rotation.y = initialRotation - angle;
     }
-}, false);
 
-document.addEventListener('touchstart', (e) => {
-    console.log("👆 touchstart", e.touches.length);
-}, false);
-
-document.addEventListener('touchmove', (e) => {
     console.log("👉 touchmove");
-}, false);
-
+}
 
 
 // Attach WebXR Frame Loop
