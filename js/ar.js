@@ -45,8 +45,9 @@ document.getElementById('arButton').addEventListener('click', async () => {
             document.getElementById('arButton').style.display = 'none';
 
             // ✅attach gesture handlers
-            renderer.domElement.addEventListener('touchstart', onTouchStart, false);
-            renderer.domElement.addEventListener('touchmove', onTouchMove, false);
+            renderer.domElement.addEventListener('touchstart', onTouchStart, { passive: false });
+            renderer.domElement.addEventListener('touchmove', onTouchMove, { passive: false });
+
 
 
             console.log('✅ AR Session started!');

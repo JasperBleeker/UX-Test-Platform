@@ -32,22 +32,6 @@ canvas {
 
 }
 
-#ARButton {
-    position: fixed !important;
-    bottom: 20px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: 140px !important;
-    height: 50px !important;
-    font-size: 18px !important;
-    background: #0066ff !important;
-    color: white !important;
-    border-radius: 10px !important;
-    border: none !important;
-    font-weight: bold !important;
-    cursor: pointer !important;
-    z-index: 9999 !important;
-}
 
 /* Start of Product */
 .product-info {
