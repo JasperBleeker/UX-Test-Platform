@@ -220,13 +220,13 @@ document.addEventListener('touchmove', (event) => {
     }
 }, false);
 
-// document.addEventListener('touchstart', (e) => {
-//     console.log("👆 touchstart", e.touches.length);
-// }, false);
+document.addEventListener('touchstart', (e) => {
+    console.log("👆 touchstart", e.touches.length);
+}, false);
 
-// document.addEventListener('touchmove', (e) => {
-//     console.log("👉 touchmove");
-// }, false);
+document.addEventListener('touchmove', (e) => {
+    console.log("👉 touchmove");
+}, false);
 
 
 

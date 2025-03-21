@@ -8,16 +8,18 @@
 
 /* End of reset.css */
 /* Start of 3D Viewport */
-body, canvas {
-    touch-action: none;
-}
-
 canvas {
+    touch-action: none; /* Only block gestures inside WebXR canvas */
+    pointer-events: auto;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 0;
-    pointer-events: auto; /* 🧠 important: allow touches */
+}
+
+body {
+    /* Allow default interactions like clicking buttons */
+    touch-action: auto;
 }
 /* End of 3D Viewport */
 
