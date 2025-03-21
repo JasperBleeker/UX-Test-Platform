@@ -174,6 +174,9 @@ function onSelect() {
 
             reticle.visible = false; // Hide reticle after placement
             console.log("✅ Model placed successfully at", gltf.scene.position);
+            console.log("Model position:", placedObject.position);
+            console.log("Model scale:", placedObject.scale);
+            console.log("Model visibility:", placedObject.visible);
         },
         undefined,
         function (error) {
