@@ -67,6 +67,12 @@ body {
     line-height: 1.5;
 }
 
+nav {
+    background-color: var(--mossgreen);
+    color: var(--textwhite);
+    padding: 10px 0;
+}
+
 h1 {
     font-size: 22px;
     font-weight: 900;
