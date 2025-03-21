@@ -8,6 +8,15 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style/global.css">
+    <link rel="stylesheet" href="style/ar-product.css">
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.172.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.172.0/examples/jsm/"
+          }
+        }
+    </script>
 </head>
 
 <body>
@@ -76,8 +85,36 @@
             <li><a href="static-product.html">Bild Produkt</a></li>
         </ul>
     </div>
+    <div class="container">
+        <div class="ar-product">
+            
+        </div>
+    </div>
+    <div class="product-info">
+        <div class="checkout" id="arButton">
+            <a href="/">
+                <div class="checkoutButton">
+                    <h2>Bei mir ansehen</h2>
+                </div>
+            </a>
+        </div>
+        <h1 chlass="product-name">Lounge Stuhl Blau</h1>
+        <div class="product-price-container">
+            <p class="product-currency">CHF</p>
+            <p class="product-price">62.-</p>
+        </div>
+        <p class="product-description">Material: Holz, Metall <br> Grösse: 60 x 90 x 50</p>
+    </div>
+    <div class="checkout">
+        <a href="/">
+            <div class="checkoutButton">
+                <h2>Abschliessen</h2>
+            </div>
+        </a>
+    </div>
     
     <script src="js/menu.js"></script>
+    <script src="js/ar.js"></script>
 
 </body>
 

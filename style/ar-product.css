@@ -1,0 +1,86 @@
+:root {
+    --mossgreen: #044040;
+    --offgreen: #3C8B8B;
+    --textwhite:#F2F2F2;
+    --textblack:#2D2D2D;
+    --pricered: #D92526;
+}
+
+/* End of reset.css */
+/* Start of 3D Viewport */
+
+/* End of 3D Viewport */
+
+/* Start of AR Button */
+#arButton {
+    margin-top: 100px;
+
+}
+
+#ARButton {
+    position: fixed !important;
+    bottom: 20px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 140px !important;
+    height: 50px !important;
+    font-size: 18px !important;
+    background: #0066ff !important;
+    color: white !important;
+    border-radius: 10px !important;
+    border: none !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    z-index: 9999 !important;
+}
+
+/* Start of Product */
+.product-info {
+    margin-top: 20px;
+    padding: 0 16px;
+}
+
+.product-info h1 {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 30px 0 20px 0;
+}
+
+.product-price-container {
+    display: flex;
+    align-items: baseline;
+    /* margin-top: 10px; */
+    color: var(--pricered);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.product-price {
+    font-size: 32px;
+    padding-left: 8px;
+}
+/* End of product */
+
+/* Start of Checkout */
+
+.checkout {
+    margin: 32px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkoutButton {
+    background-color: var(--mossgreen);
+    color: var(--textwhite);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    margin: 10px 0px;
+    min-width: 120px;
+}
