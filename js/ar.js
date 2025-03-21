@@ -46,8 +46,13 @@ document.getElementById('arButton').addEventListener('click', async () => {
             // });
 
             // ✅ Now allow touch interaction inside AR session
+            console.log("✅ Canvas is now interactive");
             renderer.domElement.style.pointerEvents = 'auto';
             document.getElementById('arButton').style.display = 'none';
+
+            // Debug global touchstart
+            window.addEventListener('touchstart', () => console.log('👋 GLOBAL touchstart fired'), { passive: false });
+
 
             // ✅attach gesture handlers
             renderer.domElement.addEventListener('touchstart', onTouchStart, { passive: false });
@@ -201,6 +206,7 @@ let touchStartX, touchStartY, initialRotation;
 const dragFactor = 0.005; // Adjusts drag speed
 
 function onTouchStart(event) {
+    console.log("🖐 onTouchStart event:", event);
     if (!placedObject) return;
 
     if (event.touches.length === 1) {
@@ -215,6 +221,7 @@ function onTouchStart(event) {
 
 
 function onTouchMove(event) {
+    console.log("🖐 onTouchMove event:", event);
     if (!placedObject) return;
 
     const cameraDirection = new THREE.Vector3();
