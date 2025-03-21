@@ -65,6 +65,7 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
+    height: 100vh;
 }
 
 nav {
@@ -76,8 +77,41 @@ nav {
     padding: 10px 16px;
 }
 
+header {
+    margin: 0px 16px;
+}
+
 h1 {
     font-size: 22px;
     font-weight: 900;
-    line-height: 1.2;
+    line-height: normal;
+    padding: 60px 0px;
+}
+
+a {
+    color: var(--textblack);
+    text-decoration: none;
+}
+
+main {
+    margin: 0px 16px;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainButton {
+    background-color: var(--mossgreen);
+    color: var(--textwhite);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    margin: 10px 0px;
+    min-width: 120px;
 }
