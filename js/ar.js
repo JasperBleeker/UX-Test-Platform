@@ -40,6 +40,11 @@ document.getElementById('arButton').addEventListener('click', async () => {
             renderer.xr.setReferenceSpaceType('local');
             await renderer.xr.setSession(session);
 
+            const gl = renderer.getContext();
+            session.updateRenderState({
+                baseLayer: new XRWebGLLayer(session, gl)
+            });
+
             // ✅ Now allow touch interaction inside AR session
             renderer.domElement.style.pointerEvents = 'auto';
             document.getElementById('arButton').style.display = 'none';
