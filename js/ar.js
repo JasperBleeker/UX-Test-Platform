@@ -133,6 +133,7 @@ function onXRFrame(time, frame) {
             reticle.visible = true;
             reticle.position.set(pose.transform.position.x, pose.transform.position.y, pose.transform.position.z);
             reticle.updateMatrixWorld(true);
+            console.log("📍 Reticle position:", reticle.position);
         } else {
 
             reticle.visible = false; // Hide reticle only if no object exists
@@ -238,7 +239,10 @@ function onTouchMove(event) {
 
 
 // Attach WebXR Frame Loop
-renderer.setAnimationLoop(onXRFrame);
+renderer.setAnimationLoop((time, frame) => {
+    onXRFrame(time, frame);
+    renderer.render(scene, camera); // <- this was missing before
+});
 
 // Initialize AR Features
 initAR();
