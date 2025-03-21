@@ -14,7 +14,24 @@ document.body.appendChild(renderer.domElement);
 console.log("🚀 Three.js AR scene initialized");
 
 // Add AR Button
-document.body.appendChild(ARButton.createButton(renderer, { requiredFeatures: ['hit-test'] }));
+const sessionInit = { requiredFeatures: ['hit-test'] };
+
+document.getElementById('arButton').addEventListener('click', async () => {
+    if (navigator.xr) {
+        const supported = await navigator.xr.isSessionSupported('immersive-ar');
+        if (supported) {
+            const session = await navigator.xr.requestSession('immersive-ar', sessionInit);
+            renderer.xr.setSession(session);
+            console.log('✅ AR Session started!');
+        } else {
+            alert("AR not supported on this device.");
+            console.warn("WebXR immersive-ar session not supported.");
+        }
+    } else {
+        alert("WebXR not available in this browser.");
+        console.warn("WebXR not available.");
+    }
+});
 
 // Lighting
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
