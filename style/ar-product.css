@@ -8,7 +8,17 @@
 
 /* End of reset.css */
 /* Start of 3D Viewport */
+body, canvas {
+    touch-action: none;
+}
 
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: auto; /* 🧠 important: allow touches */
+}
 /* End of 3D Viewport */
 
 /* Start of AR Button */
