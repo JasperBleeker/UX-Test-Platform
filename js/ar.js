@@ -39,7 +39,6 @@ document.getElementById('arButton').addEventListener('click', async () => {
             const refSpace = await session.requestReferenceSpace('local');
             renderer.xr.setReferenceSpaceType('local');
             await renderer.xr.setSession(session);
-            renderer.domElement.style.zIndex = '10'; // or higher
 
             const gl = renderer.getContext();
             session.updateRenderState({
@@ -249,7 +248,7 @@ function onTouchMove(event) {
 // Attach WebXR Frame Loop
 renderer.setAnimationLoop((time, frame) => {
     onXRFrame(time, frame);
-    renderer.render(scene, camera); // <- this was missing before
+    
 });
 
 // Initialize AR Features
