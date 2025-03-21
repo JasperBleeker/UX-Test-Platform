@@ -139,6 +139,7 @@ function onXRFrame(time, frame) {
 
         }
     }
+    renderer.render(scene, camera);
 }
 
 
@@ -237,10 +238,7 @@ function onTouchMove(event) {
 
 
 // Attach WebXR Frame Loop
-renderer.setAnimationLoop((time, frame) => {
-    onXRFrame(time, frame);
-    renderer.render(scene, camera);
-});
+renderer.setAnimationLoop(onXRFrame);
 
 // Initialize AR Features
 initAR();
