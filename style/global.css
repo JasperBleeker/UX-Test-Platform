@@ -77,6 +77,41 @@ nav {
     padding: 10px 16px;
 }
 
+/* Burger Menu Animation */
+
+.menu-icon {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+    box-sizing: content-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.bar {
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+/* Animation to close Icon */
+.menu-icon.active .top {
+    transform: rotate(45deg) translate(0px, 9px) ;
+}
+
+.menu-icon.active .middle {
+    opacity: 0;
+    
+}
+
+.menu-icon.active .bottom {
+    transform: rotate(-45deg) translate(0px, -9px) ;
+}
+
+/* End Burger Menu Animation */
+
 header {
     margin: 0px 16px;
 }
