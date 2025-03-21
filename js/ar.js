@@ -39,6 +39,7 @@ document.getElementById('arButton').addEventListener('click', async () => {
             const refSpace = await session.requestReferenceSpace('local');
             renderer.xr.setReferenceSpaceType('local');
             await renderer.xr.setSession(session);
+            renderer.domElement.style.zIndex = '10'; // or higher
 
             const gl = renderer.getContext();
             session.updateRenderState({
