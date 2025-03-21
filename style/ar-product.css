@@ -19,7 +19,7 @@ canvas {
     top: 0;
     left: 0;
     z-index: 0;
-    pointer-events: auto; /* ❌ Block interaction with canvas BEFORE AR */
+    pointer-events: none; /* ❌ Block interaction with canvas BEFORE AR */
     touch-action: none;
 }
 
