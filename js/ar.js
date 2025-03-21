@@ -139,7 +139,7 @@ function onXRFrame(time, frame) {
             reticle.visible = true;
             reticle.position.set(pose.transform.position.x, pose.transform.position.y, pose.transform.position.z);
             reticle.updateMatrixWorld(true);
-            console.log("📍 Reticle position:", reticle.position);
+            // console.log("📍 Reticle position:", reticle.position);
         } else {
 
             reticle.visible = false; // Hide reticle only if no object exists
@@ -288,7 +288,7 @@ renderer.setAnimationLoop((time, frame) => {
                     pose.transform.position.z
                 );
                 reticle.updateMatrixWorld(true);
-                console.log("📍 Reticle position:", reticle.position);
+                // console.log("📍 Reticle position:", reticle.position);
             }
         } else {
             reticle.visible = false;
