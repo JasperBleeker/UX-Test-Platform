@@ -186,6 +186,10 @@ function onSelect() {
             placedObject = gltf.scene;
 
             reticle.visible = false; // Hide reticle after placement
+
+            // ✅ Clean up the select listener
+            controller.removeEventListener('select', onSelect);
+            
             console.log("✅ Model placed successfully at", gltf.scene.position);
             console.log("Model position:", placedObject.position);
             console.log("Model scale:", placedObject.scale);
