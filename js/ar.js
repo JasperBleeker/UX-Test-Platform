@@ -65,6 +65,13 @@ document.getElementById('arButton').addEventListener('click', async () => {
     }
 });
 
+const testBox = new THREE.Mesh(
+    new THREE.BoxGeometry(0.1, 0.1, 0.1),
+    new THREE.MeshBasicMaterial({ color: 0xff0000 })
+);
+testBox.position.set(0, 0, -0.5);
+scene.add(testBox);
+
 
 // Lighting
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
