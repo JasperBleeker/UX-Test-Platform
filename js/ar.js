@@ -147,7 +147,6 @@ function onXRFrame(time, frame) {
 
         }
     }
-    renderer.render(scene, camera);
 }
 
 
@@ -247,9 +246,47 @@ function onTouchMove(event) {
 
 // Attach WebXR Frame Loop
 renderer.setAnimationLoop((time, frame) => {
-    onXRFrame(time, frame);
-    
+    if (!frame) return;
+
+    const session = renderer.xr.getSession();
+    if (!session) return;
+
+    const referenceSpace = renderer.xr.getReferenceSpace();
+
+    if (!hitTestSourceRequested) {
+        session.requestReferenceSpace('viewer').then((refSpace) => {
+            session.requestHitTestSource({ space: refSpace }).then((source) => {
+                hitTestSource = source;
+                console.log("✅ Hit test source initialized.");
+            });
+        });
+        hitTestSourceRequested = true;
+    }
+
+    if (hitTestSource && !placedObject) {
+        const hitTestResults = frame.getHitTestResults(hitTestSource);
+
+        if (hitTestResults.length > 0) {
+            const hit = hitTestResults[0];
+            const pose = hit.getPose(referenceSpace);
+            if (pose) {
+                reticle.visible = true;
+                reticle.position.set(
+                    pose.transform.position.x,
+                    pose.transform.position.y,
+                    pose.transform.position.z
+                );
+                reticle.updateMatrixWorld(true);
+                console.log("📍 Reticle position:", reticle.position);
+            }
+        } else {
+            reticle.visible = false;
+        }
+    }
+
+    renderer.render(scene, camera);
 });
+
 
 // Initialize AR Features
 initAR();
