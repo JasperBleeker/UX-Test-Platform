@@ -21,17 +21,33 @@ document.getElementById('arButton').addEventListener('click', async () => {
         const supported = await navigator.xr.isSessionSupported('immersive-ar');
         if (supported) {
             const session = await navigator.xr.requestSession('immersive-ar', sessionInit);
-            renderer.xr.setSession(session);
+
+            // 🔍 Debug: Check which reference space types are supported
+            session.requestReferenceSpace('local-floor')
+                .then(() => console.log("✅ 'local-floor' reference space is supported"))
+                .catch(() => console.warn("❌ 'local-floor' reference space is NOT supported"));
+
+            session.requestReferenceSpace('local')
+                .then(() => console.log("✅ 'local' reference space is supported"))
+                .catch(() => console.warn("❌ 'local' reference space is NOT supported"));
+
+            session.requestReferenceSpace('viewer')
+                .then(() => console.log("✅ 'viewer' reference space is supported"))
+                .catch(() => console.warn("❌ 'viewer' reference space is NOT supported"));
+
+            // 👇 Important fix to avoid crash
+            renderer.xr.setReferenceSpaceType('viewer');
+            await renderer.xr.setSession(session);
+
             console.log('✅ AR Session started!');
         } else {
             alert("AR not supported on this device.");
-            console.warn("WebXR immersive-ar session not supported.");
         }
     } else {
         alert("WebXR not available in this browser.");
-        console.warn("WebXR not available.");
     }
 });
+
 
 // Lighting
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
