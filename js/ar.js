@@ -46,6 +46,11 @@ document.getElementById('arButton').addEventListener('click', async () => {
             renderer.domElement.style.pointerEvents = 'auto';
             document.getElementById('arButton').style.display = 'none';
 
+            setTimeout(() => {
+                renderer.domElement.addEventListener('touchstart', onTouchStart, { passive: false });
+                renderer.domElement.addEventListener('touchmove', onTouchMove, { passive: false });
+            }, 100); // Let DOM update settle
+
             // Debug global touchstart
             window.addEventListener('touchstart', () => console.log('👋 GLOBAL touchstart fired'), { passive: false });
 
@@ -199,6 +204,7 @@ let touchStartX, touchStartY, initialRotation;
 const dragFactor = 0.005; // Adjusts drag speed
 
 function onTouchStart(event) {
+    event.preventDefault(); // ⛔ Stops browser from hijacking gestures
     console.log("🖐 onTouchStart event:", event);
     if (!placedObject) return;
 
@@ -214,6 +220,7 @@ function onTouchStart(event) {
 
 
 function onTouchMove(event) {
+    event.preventDefault(); // ⛔ Stops unwanted scrolling or zooming
     console.log("🖐 onTouchMove event:", event);
     if (!placedObject) return;
 
@@ -225,12 +232,16 @@ function onTouchMove(event) {
         const deltaX = (event.touches[0].clientX - touchStartX) * dragFactor;
         const deltaY = (event.touches[0].clientY - touchStartY) * dragFactor;
 
+        // Move along camera forward
         placedObject.position.addScaledVector(cameraDirection, -deltaY);
-        placedObject.position.x += deltaX * Math.cos(camera.rotation.y);
-        placedObject.position.z += deltaX * Math.sin(camera.rotation.y);
+
+        // Compute right vector from forward
+        const right = new THREE.Vector3().crossVectors(cameraDirection, new THREE.Vector3(0, 1, 0)).normalize();
+        placedObject.position.addScaledVector(right, deltaX);
 
         touchStartX = event.touches[0].clientX;
         touchStartY = event.touches[0].clientY;
+
     }
     else if (event.touches.length === 2) {
         const angle = Math.atan2(
