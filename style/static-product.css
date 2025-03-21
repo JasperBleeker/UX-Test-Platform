@@ -1,0 +1,15 @@
+:root {
+    --mossgreen: #044040;
+    --offgreen: #3C8B8B;
+    --textwhite:#F2F2F2;
+    --textblack:#2D2D2D;
+    --pricered: #D92526;
+}
+
+.container {
+    margin-top: 74px;
+    width: 100%;
+    height: 40vh;
+    background-color: var(--textblack);
+
+}
