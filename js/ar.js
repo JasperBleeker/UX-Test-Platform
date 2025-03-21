@@ -40,10 +40,6 @@ document.getElementById('arButton').addEventListener('click', async () => {
             renderer.xr.setReferenceSpaceType('local');
             await renderer.xr.setSession(session);
 
-            // const gl = renderer.getContext();
-            // session.updateRenderState({
-            //     baseLayer: new XRWebGLLayer(session, gl)
-            // });
 
             // ✅ Now allow touch interaction inside AR session
             console.log("✅ Canvas is now interactive");
@@ -68,13 +64,6 @@ document.getElementById('arButton').addEventListener('click', async () => {
         alert("WebXR not available in this browser.");
     }
 });
-
-const testBox = new THREE.Mesh(
-    new THREE.BoxGeometry(0.1, 0.1, 0.1),
-    new THREE.MeshBasicMaterial({ color: 0xff0000 })
-);
-testBox.position.set(0, 0, -0.5);
-scene.add(testBox);
 
 
 // Lighting
@@ -189,7 +178,7 @@ function onSelect() {
 
             // ✅ Clean up the select listener
             controller.removeEventListener('select', onSelect);
-            
+
             console.log("✅ Model placed successfully at", gltf.scene.position);
             console.log("Model position:", placedObject.position);
             console.log("Model scale:", placedObject.scale);
