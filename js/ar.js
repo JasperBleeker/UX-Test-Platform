@@ -40,6 +40,9 @@ document.getElementById('arButton').addEventListener('click', async () => {
             renderer.xr.setReferenceSpaceType('local');
             await renderer.xr.setSession(session);
 
+            // ✅ Now allow touch interaction inside AR session
+            renderer.domElement.style.pointerEvents = 'auto';
+
             console.log('✅ AR Session started!');
         } else {
             alert("AR not supported on this device.");
