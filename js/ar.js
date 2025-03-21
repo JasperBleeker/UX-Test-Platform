@@ -140,7 +140,6 @@ function onXRFrame(time, frame) {
         }
     }
 
-    renderer.render(scene, camera);
 }
 
 
