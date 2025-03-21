@@ -36,7 +36,8 @@ document.getElementById('arButton').addEventListener('click', async () => {
                 .catch(() => console.warn("❌ 'viewer' reference space is NOT supported"));
 
             // 👇 Important fix to avoid crash
-            renderer.xr.setReferenceSpaceType('viewer');
+            const refSpace = await session.requestReferenceSpace('local');
+            renderer.xr.setReferenceSpaceType('local');
             await renderer.xr.setSession(session);
 
             console.log('✅ AR Session started!');
@@ -94,8 +95,8 @@ function onXRFrame(time, frame) {
     if (!session) return;
 
     if (!hitTestSourceRequested) {
-        session.requestReferenceSpace('viewer').then((referenceSpace) => {
-            session.requestHitTestSource({ space: referenceSpace }).then((source) => {
+        session.requestReferenceSpace('viewer').then((refSpace) => {
+            session.requestHitTestSource({ space: refSpace }).then((source) => {
                 hitTestSource = source;
                 console.log("✅ Hit test source initialized.");
             }).catch((err) => {
