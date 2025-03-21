@@ -89,14 +89,6 @@ function initAR() {
     }
 }
 
-document.addEventListener('touchstart', (e) => {
-    console.log("👆 touchstart", e.touches.length);
-}, false);
-
-document.addEventListener('touchmove', (e) => {
-    console.log("👉 touchmove");
-}, false);
-
 // WebXR Hit Test Source
 function onXRFrame(time, frame) {
     const session = renderer.xr.getSession();
@@ -226,6 +218,14 @@ document.addEventListener('touchmove', (event) => {
         );
         placedObject.rotation.y = initialRotation - angle; // Corrected rotation
     }
+}, false);
+
+document.addEventListener('touchstart', (e) => {
+    console.log("👆 touchstart", e.touches.length);
+}, false);
+
+document.addEventListener('touchmove', (e) => {
+    console.log("👉 touchmove");
 }, false);
 
 
