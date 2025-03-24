@@ -22,8 +22,8 @@ model-viewer {
     background-position: 12px 50%;
     background-color: #fff;
     position: absolute;
-    right: 20%;
-    transform: translateX(20%);
+    right: 16px;
+    bottom: 16px;
     white-space: nowrap;
     bottom: 132px;
     padding: 0px 16px 0px 40px;
