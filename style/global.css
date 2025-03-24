@@ -204,3 +204,7 @@ main {
     margin: 10px 0px;
     min-width: 120px;
 }
+
+.mainButton:active {
+    background-color: var(--offgreen);
+}
