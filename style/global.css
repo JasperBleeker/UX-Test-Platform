@@ -203,8 +203,16 @@ main {
     text-align: center;
     margin: 10px 0px;
     min-width: 120px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mainButton {
+    transition: transform 0.1s ease, background-color 0.3s ease;
+    touch-action: manipulation;
 }
 
 .mainButton:active {
     background-color: var(--offgreen);
+    transform: scale(0.96);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
