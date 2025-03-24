@@ -204,9 +204,6 @@ main {
     margin: 10px 0px;
     min-width: 120px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.mainButton {
     transition: transform 0.1s ease, background-color 0.3s ease;
     touch-action: manipulation;
 }
