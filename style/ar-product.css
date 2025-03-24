@@ -16,14 +16,14 @@ model-viewer {
 }
 
 #ar-button {
-    background-image: url(*/assets/ic_view_in_ar_new_googblue_48dp.png);
+    background-image: url(../assets/ic_view_in_ar_new_googblue_48dp.png);
     background-repeat: no-repeat;
     background-size: 20px 20px;
     background-position: 12px 50%;
     background-color: #fff;
     position: absolute;
     right: 20%;
-    transform: translateX(-20%);
+    transform: translateX(20%);
     white-space: nowrap;
     bottom: 132px;
     padding: 0px 16px 0px 40px;
