@@ -15,33 +15,6 @@ model-viewer {
     height: 50vh;
 }
 
-/* Start of 3D Viewport */
-
-body {
-    /* Allow default interactions like clicking buttons */
-    touch-action: auto;
-}
-
-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1000;
-    pointer-events: none; /* ❌ Block interaction with canvas BEFORE AR */
-    touch-action: none;
-}
-
-
-/* End of 3D Viewport */
-
-/* Start of AR Button */
-#arButton {
-    margin-top: 100px;
-
-}
-
 
 /* Start of Product */
 .product-info {
