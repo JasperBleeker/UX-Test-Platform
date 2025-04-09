@@ -1,0 +1,50 @@
+:root {
+    --mossgreen: #044040;
+    --offgreen: #3C8B8B;
+    --textwhite:#F2F2F2;
+    --textblack:#2D2D2D;
+    --pricered: #D92526;
+}
+
+/* End of reset.css */
+/* Start of Questionaire */
+.container {
+    margin-top: 86px;
+    width: 100%;
+    height: 77dvh;
+    background-color: var(--textwhite);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+
+
+/* End of Questionaire */
+
+
+/* Start of Checkout */
+
+.checkout {
+    margin: 32px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkoutButton {
+    background-color: var(--mossgreen);
+    color: var(--textwhite);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    margin: 10px 0px;
+    min-width: 120px;
+}
