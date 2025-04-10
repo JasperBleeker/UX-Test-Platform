@@ -4,6 +4,7 @@ const swiper = new Swiper('.swiper', {
     loop: true,
     zoom: {
         maxRatio: 3, // oder mehr, z.B. 3 oder 4
+        limitToOriginalSize: true,
     },
 
     touchRatio: 1,
