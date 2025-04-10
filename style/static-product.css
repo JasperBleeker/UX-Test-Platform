@@ -38,6 +38,14 @@
     background-color: var(--offgreen);
 }
 
+.swiper-zoom-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* End of gallery */
 /* Start of product */
 .product-info {
