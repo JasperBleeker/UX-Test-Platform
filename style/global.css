@@ -2,19 +2,87 @@
 v2.0 | 20110126
 License: none (public domain)
 */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -22,31 +90,52 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
     display: block;
 }
+
 body {
     line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
     list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
     quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
     content: '';
     content: none;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
 
-a, button, .menu-icon {
+a,
+button,
+.menu-icon {
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -56,8 +145,8 @@ a, button, .menu-icon {
 :root {
     --mossgreen: #044040;
     --offgreen: #3C8B8B;
-    --textwhite:#F2F2F2;
-    --textblack:#2D2D2D;
+    --textwhite: #F2F2F2;
+    --textblack: #2D2D2D;
     --pricered: #D92526;
 }
 
@@ -86,7 +175,7 @@ nav {
     padding: 10px 16px;
     display: flex;
     justify-content: space-between;
-    align-items: center; 
+    align-items: center;
 }
 
 /* Burger Menu Animation */
@@ -100,7 +189,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
 
 .bar {
@@ -110,16 +199,16 @@ nav {
 
 /* Animation to close Icon */
 .menu-icon.active .top {
-    transform: rotate(45deg) translate(0px, 9px) ;
+    transform: rotate(45deg) translate(0px, 9px);
 }
 
 .menu-icon.active .middle {
     opacity: 0;
-    
+
 }
 
 .menu-icon.active .bottom {
-    transform: rotate(-45deg) translate(0px, -9px) ;
+    transform: rotate(-45deg) translate(0px, -9px);
 }
 
 /* End Burger Menu Animation */
@@ -189,12 +278,22 @@ a {
 main {
     margin: 0px 16px;
     padding-top: 30%;
-    height:100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
+
+@media screen and (min-width: 768px) {
+    .desktopWrapper {
+
+        padding: 0px 120px;
+    }
+}
+
+
 
 .mainButton {
     background-color: var(--mossgreen);
@@ -229,6 +328,7 @@ main {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -237,13 +337,15 @@ main {
 
 .mainButton {
     animation: slideFadeIn 0.5s ease-out forwards;
-    opacity: 0; /* Start hidden */
+    opacity: 0;
+    /* Start hidden */
 }
 
 /* Optional: delay per button */
 .mainButton:nth-child(1) {
     animation-delay: 0.2s;
 }
+
 .mainButton:nth-child(2) {
     animation-delay: 0.4s;
 }
