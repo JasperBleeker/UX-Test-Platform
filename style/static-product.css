@@ -10,24 +10,21 @@
 /* Start of gallery */
 .container {
     margin-top: 74px;
-    width: 100%;
-    height: 40vh;
+    width: 100vw;
+    /* height: 40vh; */
     background-color: var(--textblack);
 
 }
 
 .swiper {
     width: 100%;
-    height: 50vh;
+    height: 100%;
 }
 
 .swiper-slide img{
-    background-size: cover;
-    object-fit: cover;
-    background-position: center;
-    overflow: hidden;
     width: 100%;
     height: 100%;
+    display: block;
 }
 
 .swiper .swiper-button-next, .swiper .swiper-button-prev {
@@ -38,13 +35,17 @@
     background-color: var(--offgreen);
 }
 
-.swiper-zoom-container {
+.swiper-slide, .swiper-zoom-container {
     width: 100%;
     height: 100%;
+    background-color: var(--textblack);
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+
+
 
 /* End of gallery */
 /* Start of product */
