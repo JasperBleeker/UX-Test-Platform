@@ -3,8 +3,11 @@ const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
     loop: true,
     zoom: {
-        maxRatio: 2, // oder mehr, z.B. 3 oder 4
-      },
+        maxRatio: 3, // oder mehr, z.B. 3 oder 4
+    },
+
+    touchRatio: 1,
+    passiveListeners: false,
 
     // If we need pagination
     pagination: {
