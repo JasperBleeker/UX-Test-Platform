@@ -41,7 +41,7 @@ Ziel ist es, den Einfluss von AR-Technologien auf die Nutzererfahrung beim Onlin
    - Für die statische Produktansicht: Öffne `static-product.html`.
    - Der Fragebogen ist über `umfrage.html` erreichbar.
    
-   > **Hinweis:** Für das beste Ergebnis wird empfohlen, die Plattform über einen lokalen Webserver mit SSL-Zertifikat (https) oder einen herkömmlichen Webserver zu betreiben. Viele AR-Funktionen (WebXR) funktionieren nur über eine gesicherte Verbindung (https).
+> **Hinweis:** Für das beste Ergebnis wird empfohlen, die Plattform über einen lokalen Webserver mit SSL-Zertifikat (https) oder einen herkömmlichen Webserver zu betreiben. Viele AR-Funktionen (WebXR) funktionieren nur über eine gesicherte Verbindung (https).
 
 
 3. **Datenanalyse:**
@@ -88,7 +88,7 @@ Die Plattform ist weiterhin unter folgender Adresse erreichbar:
 
 ## Lizenz
 
-Dieses Projekt wurde im Rahmen einer Bachelorarbeit erstellt und ist ausschließlich für wissenschaftliche Zwecke bestimmt. Für eine anderweitige Nutzung bitte Kontakt aufnehmen.
+Dieses Projekt wurde im Rahmen einer Bachelorarbeit erstellt und ist ausschliesslich für wissenschaftliche Zwecke bestimmt. Für eine anderweitige Nutzung bitte Kontakt aufnehmen.
 
 ---
 
